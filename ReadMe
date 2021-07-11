@@ -1,0 +1,92 @@
+maven clean --> This cleans the project based on what was preciously ran
+
+Maven is a build tool
+note maven life cylcle
+1. maven compile --> uses the maven compiler plugin
+2. maven test --> maven surefire plugin to run test cases using testNg, junit
+3. maven Resources--> jars using maven resource plugin generating the war, jar or ear files
+=========================================================================================
+To execute maven project
+open cmd
+navigate to project dir
+run: mvn clean install --> this will build the project and generate the jar files for test and execute the test.
+
+run mvn test  --> this will run all the testcases without cleaning it
+===========================================================================================
+interview question
+how will you skip test cases and build maven project
+to build the project with runing the test cases:
+mvn package -DskipTests
+
+another way to do this is by follwoing the steps below:
+note that if the maven test tag is set to true, the build will skip the tests
+So it should be set to false to see testcases run.
+1. Add maven.test skip to the property tag in the pom file as shown below
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.test.skip>true</maven.test.skip>
+	</properties>
+
+
+2. run: mvn package -Dmaven.test.skip=true
+==========================================================================================
+if pom file shows a red error in the project explorer
+right click on the project folder
+select maven > update project
+
+==========================================================================================
+For maven to execute all testng classes
+1. you need to add testng.xml to the project and the location of the file in the pom file
+at: <suiteXmlFile>testNG.xml</suiteXmlFile>
+if you just pass the name of the xml file, this means that the file is just placed at the pom file location.
+=================sample testng.xml file===============================
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Maven Suite">
+
+	<test name="Test Maven Testng">
+		<packages>
+			<package name="com.qa.tests.*" />
+		</packages>
+
+	</test>
+
+</suite>
+2.update pom file to have plugins as shown below:
+ref for more info:L https://maven.apache.org/plugins/index.html
+<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testNG.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	=====================RunCucumber testng ==========================
+	Right click on the testnh.xml file > click run
