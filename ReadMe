@@ -10,7 +10,7 @@ To execute maven project
 open cmd
 navigate to project dir
 run: mvn clean install --> this will build the project and generate the jar files for test and execute the test.
-
+run mvn clean verify
 run mvn test  --> this will run all the testcases without cleaning it
 ===========================================================================================
 interview question
@@ -89,7 +89,7 @@ ref for more info:L https://maven.apache.org/plugins/index.html
 	</build>
 
 	=====================RunCucumber testng ==========================
-	Right click on the testnh.xml file > click run
+	Right click on the testng.xml file > click run
 
 =====================Webdriver manager===========================================
 https://github.com/bonigarcia/webdrivermanager/
@@ -105,3 +105,10 @@ The cucumber annotations include:
 2. After - it is executed after each scenario
 3. BeforeEach - it is executed before each step
 4.AfterEach - it is executed after each step
+
+==============To create report and access it on the cloud==========================
+src/test/resources/cucumber.properties:    cucumber.publish.enabled=true
+1. create a file in the following dir  src/test/resources
+2.Name the file: cucumber.properties
+3. copy and paste the following in the file and save: cucumber.publish.enabled=true
+
