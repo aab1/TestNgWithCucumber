@@ -3,17 +3,39 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-07-11T17:27:10.892Z",
-        "line": 3,
-        "name": "Open google page",
+        "start_timestamp": "2021-07-12T02:32:24.924Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3801000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.stepDefinitions.ProjectHooks.setUp()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Open google page:",
         "description": "",
-        "id": "google-test;open-google-page",
+        "id": "demo-test;open-google-page:",
+        "after": [
+          {
+            "result": {
+              "duration": 4772000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.stepDefinitions.ProjectHooks.tearDown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 12617000000,
+              "duration": 3093000000,
               "status": "passed"
             },
             "line": 5,
@@ -23,12 +45,67 @@
             },
             "keyword": "Given "
           }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-12T02:32:36.695Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1826000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.stepDefinitions.ProjectHooks.setUp()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Open facebook page",
+        "description": "",
+        "id": "demo-test;open-facebook-page",
+        "after": [
+          {
+            "result": {
+              "duration": 928000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.example.stepDefinitions.ProjectHooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10002000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User launch facebook page",
+            "match": {
+              "location": "com.example.stepDefinitions.GoogleStepDefs.userLaunchFacebookPage()"
+            },
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          }
         ]
       }
     ],
-    "name": "Google test",
+    "name": "Demo test",
     "description": "",
-    "id": "google-test",
+    "id": "demo-test",
     "keyword": "Feature",
     "uri": "file:src/test/resources/features/GoogleTest.feature",
     "tags": []

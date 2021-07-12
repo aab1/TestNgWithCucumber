@@ -14,11 +14,11 @@ run: mvn clean install --> this will build the project and generate the jar file
 run mvn test  --> this will run all the testcases without cleaning it
 ===========================================================================================
 interview question
-how will you skip test cases and build maven project
-to build the project with runing the test cases:
+How will you skip test cases and build maven project
+to build the project without running the test cases:
 mvn package -DskipTests
 
-another way to do this is by follwoing the steps below:
+another way to do this is by following the steps below:
 note that if the maven test tag is set to true, the build will skip the tests
 So it should be set to false to see testcases run.
 1. Add maven.test skip to the property tag in the pom file as shown below
@@ -90,3 +90,18 @@ ref for more info:L https://maven.apache.org/plugins/index.html
 
 	=====================RunCucumber testng ==========================
 	Right click on the testnh.xml file > click run
+
+=====================Webdriver manager===========================================
+https://github.com/bonigarcia/webdrivermanager/
+
+=================================Hooks============================================
+block of code used for setup and tear down
+it can be executed at any point in time
+
+Annotations in cucumber are similar to the ones in testNg so you have to import the correct library to avoid issues
+Ref: https://www.baeldung.com/java-cucumber-hooks
+The cucumber annotations include:
+1. Before - it is executed before each scenario
+2. After - it is executed after each scenario
+3. BeforeEach - it is executed before each step
+4.AfterEach - it is executed after each step

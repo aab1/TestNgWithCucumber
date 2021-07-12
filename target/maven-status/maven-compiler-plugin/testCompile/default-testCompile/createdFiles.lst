@@ -1,2 +1,3 @@
 com\example\TestRunner.class
 com\example\stepDefinitions\GoogleStepDefs.class
+com\example\stepDefinitions\ProjectHooks.class
