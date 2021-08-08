@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Demo Cucumber With TestNG</td>
         <td>1</td>
-      <td>08 Aug 2021, 12:58</td>
+      <td>08 Aug 2021, 13:27</td>
     </tr>
   </tbody>
 </table>
@@ -129,19 +129,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@regression</td>
-          <td      class="passed"    >2</td>
-          <td >0</td>
+          <td      class="passed"    >1</td>
+          <td      class="failed"    >1</td>
           <td >0</td>
           <td >0</td>
           <td >0</td>
           <td class="total">2</td>
 
-          <td  class="passed"    >2</td>
-          <td >0</td>
+          <td  class="passed"    >1</td>
+          <td  class="failed"    >1</td>
           <td class="total">2</td>
 
-          <td class="duration" data-value="8016000000">8.016</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="5536000000">5.536</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -183,7 +183,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">4.495</span>
+  <span class="lead-duration duration">2.929</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
@@ -221,7 +221,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.stepDefinitions.ProjectHooks.setUp()</span>
 
-  <span class="lead-duration duration">3.881</span>
+  <span class="lead-duration duration">2.934</span>
 
           </div>
 
@@ -258,7 +258,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">User launch google page</span>
 
-  <span class="lead-duration duration">4.495</span>
+  <span class="lead-duration duration">2.929</span>
 
 </div>
 
@@ -303,7 +303,7 @@ $(document).ready(function() {
             <span class="keyword indention">After</span>
               <span class="location name">com.example.stepDefinitions.ProjectHooks.tearDown()</span>
 
-  <span class="lead-duration duration">0.921</span>
+  <span class="lead-duration duration">4.807</span>
 
           </div>
 
@@ -334,12 +334,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">3.521</span>
+  <span class="lead-duration duration">2.607</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-5">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-5">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario</span>
   <span class="name">Open facebook page</span>
 
@@ -350,7 +350,7 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-5" class="collapse collapsable-details ">
+  <div id="element-5" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
@@ -372,7 +372,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.stepDefinitions.ProjectHooks.setUp()</span>
 
-  <span class="lead-duration duration">2.045</span>
+  <span class="lead-duration duration">1.385</span>
 
           </div>
 
@@ -389,9 +389,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-7">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-7">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -401,15 +401,15 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-7" class="inner-level collapse collapsable-details ">
+  <div id="steps-7" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
-<div class="brief step-name-Given passed">
+<div class="brief step-name-Given failed">
   <span class="keyword indention">Given</span>
   <span class="name">User launch facebook page</span>
 
-  <span class="lead-duration duration">3.521</span>
+  <span class="lead-duration duration">2.607</span>
 
 </div>
 
@@ -417,6 +417,24 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-8">
+          <a>java.lang.AssertionError:</a>
+      </div>
+      <div id="msg-8" class="collapse collapsable-details  in ">
+        <pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at org.testng.Assert.assertTrue(Assert.java:55)
+	at com.example.stepDefinitions.GoogleStepDefs.userLaunchFacebookPage(GoogleStepDefs.java:27)
+	at &#10045;.User launch facebook page(file:///C:/seleniumTraining/DemoCucumberWithTestNg/src/test/resources/features/GoogleTest.feature:9)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -436,7 +454,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-8">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-9">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -448,13 +466,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-8" class="inner-level collapse collapsable-details ">
+    <div id="after-9" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.stepDefinitions.ProjectHooks.tearDown()</span>
 
-  <span class="lead-duration duration">1.338</span>
+  <span class="lead-duration duration">4.811</span>
 
           </div>
 
