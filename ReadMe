@@ -112,3 +112,40 @@ src/test/resources/cucumber.properties:    cucumber.publish.enabled=true
 2.Name the file: cucumber.properties
 3. copy and paste the following in the file and save: cucumber.publish.enabled=true
 
+==========Add html report =======================
+Note that this is a maven report. So, it will only be generated when test is executed using maven.
+e.g. run mvn clean install
+To do this,
+1. Add the following to the pom.xml plugins section
+This can be found at https://github.com/damianszczepanik/maven-cucumber-reporting
+ <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>5.5.4</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>Demo Cucumber With TestNG</projectName>
+                            <!-- optional, per documentation set this to "true" to bypass generation of Cucumber Reports entirely, defaults to false if not specified -->
+                            <skip>false</skip>
+                            <!-- output directory for the generated report -->
+                            <outputDirectory>reports/html-reports</outputDirectory>
+                            <!-- optional, defaults to outputDirectory if not specified -->
+                            <inputDirectory>target/cucumber-reports</inputDirectory>
+                            <jsonFiles>
+                                <!-- supports wildcard or name pattern -->
+                                <param>**/*.json</param>
+                            </jsonFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+  2. Ensure that the input directory tag has target/cucumber-reports as you applied it in the plugin for json in the TestRunner class
+
+
